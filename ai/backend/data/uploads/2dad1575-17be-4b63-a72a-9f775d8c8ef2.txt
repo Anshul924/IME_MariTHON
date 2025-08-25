@@ -1,0 +1,8 @@
+20-Aug-2025 08:30 - Vessel arrived at anchorage
+20-Aug-2025 09:45 - Pilot boarded
+20-Aug-2025 10:15 - Vessel berthed
+20-Aug-2025 11:00 - Loading commenced
+20-Aug-2025 15:30 - Loading stopped due to rain
+20-Aug-2025 16:00 - Loading resumed
+20-Aug-2025 22:00 - Loading completed
+21-Aug-2025 08:00 - Vessel sailed

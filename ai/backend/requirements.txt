@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pytesseract
+pdf2image
+pdfplumber
+pillow
+opencv-python
+numpy
+pandas
+python-dateutil
+dateparser
+spacy
