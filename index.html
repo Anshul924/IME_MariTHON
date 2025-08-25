@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laytime Pro — Hologram</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Graph notebook overlay -->
+  <div class="graph-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🚢 Laytime Pro</div>
+    <div class="nav-links">
+      <a href="#upload">Upload</a>
+      <a href="#form">Details</a>
+      <a href="#results">Results</a>
+    </div>
+  </nav>
+
+  <!-- Upload Section -->
+  <section class="upload-section" id="upload">
+    <h1>Calculate Laytime</h1>
+
+    <div class="tabs">
+      <button class="tab active">Automated</button>
+      <button class="tab">Manual</button>
+      <button class="tab">Layspan Dashboard</button>
+      <button class="tab">Saved Laytime</button>
+    </div>
+
+    <div class="upload-boxes">
+      <label class="upload-box">
+        <div class="icon">☁️⬆️</div>
+        <div class="title">Upload SOF File</div>
+        <div class="sub">PDF / DOC / DOCX</div>
+        <input type="file" accept=".pdf,.doc,.docx">
+      </label>
+
+      <div class="steps">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+
+      <label class="upload-box">
+        <div class="icon">☁️⬆️</div>
+        <div class="title">Upload CP File (Optional)</div>
+        <div class="sub">PDF / DOC / DOCX</div>
+        <input type="file" accept=".pdf,.doc,.docx">
+      </label>
+    </div>
+
+    <button id="submitUpload" class="submit-btn">Submit</button>
+  </section>
+
+  <!-- Voyage Details Form -->
+  <section class="form-section" id="form">
+    <h2>Voyage Details</h2>
+    <div class="form-grid">
+      <input id="fShip" placeholder="Created For (Ship)" />
+      <input id="fFrom" placeholder="Voyage From" />
+      <input id="fTo" placeholder="Voyage To" />
+      <input id="fCargo" placeholder="Cargo" />
+      <input id="fPort" placeholder="Port" />
+      <select id="fOp">
+        <option>Discharge</option>
+        <option>Load</option>
+      </select>
+      <input id="fDem" type="number" placeholder="Demurrage ($/day)" />
+      <input id="fDis" type="number" placeholder="Dispatch ($/day)" />
+      <input id="fRate" type="number" placeholder="Load/Disch (MT/day)" />
+      <input id="fQty" type="number" placeholder="Cargo Qty (MT)" />
+    </div>
+    <button id="calculateBtn">Calculate</button>
+  </section>
+
+  <!-- Results Table -->
+  <section class="table-section hidden" id="results">
+    <h2>Laytime Result</h2>
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Duration</th> 
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="table-actions">
+      <button class="pill" id="exportCsv">Export CSV</button>
+      <button class="pill outline" id="clearTbl">Clear</button>
+    </div>
+    <div class="totals">Total Time: 0h 00m</div>
+  </section>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
